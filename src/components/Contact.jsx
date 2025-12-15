@@ -25,7 +25,11 @@ const Contact = () => {
     e.preventDefault();
     setStatus({ loading: true, success: false, error: false, message: "" });
 
+    // --- THIS IS THE FIX ---
+    // In a Vite project, environment variables are accessed via `import.meta.env`
     const apiKey = import.meta.env.VITE_WEB3FORMS_KEY;
+    // --- END FIX ---
+
     console.log("API Key available:", !!apiKey);
 
     if (!apiKey) {
@@ -51,8 +55,9 @@ const Contact = () => {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          redirect_url: "https://web3forms.com/success",
-          to_email: "spatra5236@gmail.com",
+          // These are optional fields from the original code
+          // redirect_url: "https://web3forms.com/success",
+          // to_email: "spatra5236@gmail.com",
         }),
       });
 
