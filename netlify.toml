@@ -2,5 +2,8 @@
 command = "npm run build"
 publish = "dist"
 
-[env.production]
-VITE_WEB3FORMS_KEY = "6ff78d76-f5dc-47b9-8fd1-d4e740534bd2"
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
