@@ -8,7 +8,7 @@ const Resume = () => (
         Download my resume to learn more about my experience and qualifications.
       </p>
       <a
-        href="/resume.pdf"
+        href="https://drive.google.com/file/d/18RmueNLU-1tS2-XebQHgOqXBIE2VqSuS/view?usp=drive_link"
         download
         className="bg-amber-500 text-slate-900 px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 transition"
       >
