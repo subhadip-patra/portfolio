@@ -2,11 +2,10 @@
 
 A modern, responsive developer portfolio built with React and Tailwind CSS.
 
-![Portfolio Preview](./screenshot.png)
 
 ## 🌐 Live Demo
 
-🔗 **[View Live Portfolio](https://your-deployed-url.com)**
+🔗 **[View Live Portfolio]((https://sprotfolio.netlify.app/))**
 
 <!-- Replace with your actual deployed URL -->
 
