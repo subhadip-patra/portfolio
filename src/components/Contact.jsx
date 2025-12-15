@@ -33,7 +33,7 @@ const Contact = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "6ff78d76-f5dc-47b9-8fd1-d4e740534bd2", // ✅ Fixed here
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
           name: formData.name,
           email: formData.email,
           message: formData.message,
