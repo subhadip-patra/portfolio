@@ -7,8 +7,8 @@ const Inspiration = () => (
         Stay Inspired
       </h2>
       <blockquote className="text-xl sm:text-2xl text-slate-300 italic leading-relaxed">
-        “Code is not just about syntax—it's about solving problems, sparking
-        innovation, and creating experiences that people love.”
+        "Code is not just about syntax—it's about solving problems, sparking
+        innovation, and creating experiences that people love."
       </blockquote>
       <p className="mt-6 text-cyan-400 font-semibold text-lg">
         Keep building. Keep learning. Keep growing. 🚀

@@ -27,12 +27,7 @@ const Navbar = () => {
                 {link}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="ml-2 bg-cyan-500 text-slate-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-400"
-            >
-              Hire Me
-            </a>
+            
           </div>
 
           <button
