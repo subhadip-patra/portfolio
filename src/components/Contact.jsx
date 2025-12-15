@@ -25,24 +25,6 @@ const Contact = () => {
     e.preventDefault();
     setStatus({ loading: true, success: false, error: false, message: "" });
 
-    // --- THIS IS THE FIX ---
-    // In a Vite project, environment variables are accessed via `import.meta.env`
-    const apiKey = import.meta.env.VITE_WEB3FORMS_KEY;
-    // --- END FIX ---
-
-    console.log("API Key available:", !!apiKey);
-
-    if (!apiKey) {
-      setStatus({
-        loading: false,
-        success: false,
-        error: true,
-        message:
-          "Configuration error: API key not found. Please contact the site owner.",
-      });
-      return;
-    }
-
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -51,18 +33,16 @@ const Contact = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: apiKey,
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY, // ✅ Fixed here
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          // These are optional fields from the original code
-          // redirect_url: "https://web3forms.com/success",
-          // to_email: "spatra5236@gmail.com",
+          subject: `New Portfolio Contact from ${formData.name}`,
+          from_name: "Portfolio Contact Form",
         }),
       });
 
       const result = await response.json();
-      console.log("API Response:", result);
 
       if (result.success) {
         setStatus({
@@ -80,7 +60,6 @@ const Contact = () => {
         throw new Error(result.message || "Something went wrong!");
       }
     } catch (error) {
-      console.error("Contact form error:", error);
       setStatus({
         loading: false,
         success: false,
